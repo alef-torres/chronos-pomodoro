@@ -1,10 +1,21 @@
 import './styles/theme.css'
 import './styles/global.css'
 
+import { Container } from './components/Container'
+import { Heading } from './components/Heading'
+import { Logo } from './components/Logo'
+
 export default function App() {
   return (
-    <h1>Cronos Pomodoro</h1>
+    <>
+      <Container>
+        <Logo />
+      </Container>
+      <Container>
+        <Heading>
+          MENU
+        </Heading>
+      </Container>
+    </>
   )
 }
-
-
