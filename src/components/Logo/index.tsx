@@ -3,10 +3,10 @@ import styles from './styles.module.css'
 
 export function Logo() {
     return (
-        <div className={styles.container}>
+        <div className={styles.logo}>
             <a href="" className={styles.logoLink}>
                 <TimerIcon className={styles.timerIcon} />
-                <span className={styles.title}>CHRONOS</span>
+                <span className={styles.title}>Chronos</span>
             </a>
         </div>
     )
