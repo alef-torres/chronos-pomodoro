@@ -10,7 +10,7 @@ export function DefaultInput({ type, labelText, id, ...rest }: DefaultInput) {
     return (
         <div className={styles.container}>
             <label htmlFor={id}>{labelText}</label>
-            <input type={type} id={id} {...rest} />
+            <input className={styles.input} type={type} id={id} {...rest} placeholder='Digite algo' disabled defaultValue='Valor' />
         </div>
     )
 }

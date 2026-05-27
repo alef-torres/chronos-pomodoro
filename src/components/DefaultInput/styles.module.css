@@ -3,3 +3,24 @@
     flex-direction: column;
     gap: 0.8rem;
 }
+
+.input { 
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--gray-600);
+    color: inherit;
+    font-size: inherit;
+    text-align: center;
+    padding: 0.4rem;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom-color: var(--primary);
+}
+
+.input:disabled {
+    border-bottom: .2rem solid var(--disabled);
+    color: var(--text-muted);
+}
+
