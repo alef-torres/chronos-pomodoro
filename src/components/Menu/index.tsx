@@ -1,4 +1,4 @@
-import { HistoryIcon, HouseIcon, SettingsIcon, SunIcon } from 'lucide-react'
+import { HistoryIcon, HouseIcon, MoonIcon, SettingsIcon, SunIcon } from 'lucide-react'
 import styles from './styles.module.css'
 import { useState, useEffect } from 'react'
 
@@ -6,7 +6,12 @@ type AvailableThemes = 'light' | 'dark';
 
 export function Menu() {
 
-    const [theme, setTheme] = useState<AvailableThemes>('dark')
+    const [theme, setTheme] = useState<AvailableThemes>(() => {
+        const localTheme = localStorage.getItem('chronos-pomodoro:theme') as AvailableThemes | null
+        return localTheme ?? 'dark'
+    })
+
+    const ThemeIcon = theme === 'dark' ? SunIcon : MoonIcon
 
     function toggleTheme(
         event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -31,7 +36,7 @@ export function Menu() {
                 <SettingsIcon className={styles.icon} />
             </a>
             <a href="#" className={styles.menuLink} aria-label="Theme" title="Theme" onClick={toggleTheme}>
-                <SunIcon className={styles.icon} />
+                <ThemeIcon className={styles.icon} />
             </a>
         </nav>
     )
